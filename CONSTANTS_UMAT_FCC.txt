@@ -1,0 +1,88 @@
+        real*8  K_similitude, b_burger,nu_G,k_multi_cell
+         real*8  q_t,rho_s_zero,k_multi,R_ann_s
+         real*8  k_cs,V_cs, tau_cs
+         real*8  eta_str_l,beta_str_l,fw_l,d_struct_l
+         real*8  G_range_l,G_max_l, G_2nd_max_l
+         real*8  alpha_LE
+         integer*8 n_G_max_l,nd_G_max_l
+
+        common/CONSTANTS/C11,C12,C44,temperature,Boltzm_k,
+     &  flow_exp_p_oct, flow_exp_q_oct,
+     &  F_zero_oct,
+     &  d_zero_oct,
+     &  S_zero_oct,
+     &  C44_zero,Cmu,
+     &  C44_ratio,
+     &  K_similitude,
+     &  b_burger,
+     &  rho_s_zero,
+     &  k_multi,
+     &  R_ann_s,
+     &  nu_G,
+     &  k_cs,
+     &  V_cs,
+     &  tau_cs
+
+
+c-----------------------------------------------------
+c  Material constants
+c-----------------------------------------------------
+
+          C11 = 232000.
+          C12 = 154000.
+          C44 = 118000.
+
+          temperature = 293.
+          Boltzm_k = 8.314   !! J K^-1 mol^-1
+          Boltzm1 =1.3806488e-23 !! J K^-1
+          flow_exp_p_oct = 0.9
+          flow_exp_q_oct = 1.5
+          F_zero_oct  = 94000.
+          d_zero_oct = 120.
+
+          S_zero_oct = 4.
+
+          C44_zero = 127600.
+          Cmu = 80612.9432
+
+c-----------------------------------------------------
+c  Definition for structure
+c-----------------------------------------------------
+
+          finf=0.24
+          f_zero=0.4
+          g_p=1.7
+
+          fw_max=0.75
+
+          G_M=0.8e-4
+          G_PSB=3.e-2
+          G_Hirth=0.8e-4
+
+          eta_veins=50.
+          eta_cell=1.
+          eta_PSB= 20.
+          eta_labyr=2.
+
+          CK_MCD=0.2
+          CK_similitude= 3.75
+
+          A_inter_S=0.1
+
+          d_gr_ref= 1e-3
+
+          alpha_LE=1.
+
+          b_burger=2.5e-10
+          rho_s_zero=1.0e10
+          k_multi=2
+          k_multi_cell=1.
+          k_ann_s=1.
+          R_ann_s=10e-9
+          R_ann_e=3.e-9
+          nu_G=1e12
+          k_cs=0.5
+          V_cs= 1000*(b_burger**3)
+          tau_cs=  Cmu*b_burger/ (4*3.14159*R_ann_s)
+          d_cs = 1.e-6
+

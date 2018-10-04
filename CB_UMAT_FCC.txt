@@ -1,0 +1,51 @@
+         DOUBLE PRECISION  D_angle
+         real*8  delta_gamma_cum,delta_gamma_cum0      
+         real*8 CMeso_temp
+
+         real*8 d_gamma_dot,gamma_dot,gamma_try,
+     &  gamma_dot_e,gamma_dot_prev,gamma_dot_prev0
+         real*8 g0,g,a0,a,tau,tau0,sigma
+         real*8 gamma_dot_zero,gamma_dot_e_zero
+         real*8 gamma_dot_element,gamma_cum_element,
+     &   gamma_cum_element_max,gamma_cum_element_min,
+     &   gamma_cum_init_even_step
+         real*8 rho_s0,rho_s
+         real*8 drhosdt, drhodgb
+         real*8 G_range_el,G_mean_e
+         real*8 tau_max_el
+         real*8 G_max_el,G_2nd_max_el,
+     &     Accu_Shearstr_pl_eff_max,Sigma_eq_max
+         integer*8 n_G_max,n_G_2nd_max,n_CS,n_Hirth
+         real*8 fw,eta_str,d_struct
+         real*8 fw_hist,eta_str_hist,d_struct_hist
+         real*8 psi_g
+         real*8 Cnor_dis
+         real*8 CMeso_rot,Crand_dis
+
+       common/KUEXTa/ G_range_el(num_elem,num_slip_sys),
+     & G_mean_el(num_elem,num_slip_sys),
+     & gamma_dot_element(num_elem,num_slip_sys),
+     & gamma_cum_element(num_elem,num_slip_sys),
+     & gamma_cum_element_max(num_elem,num_slip_sys),
+     & gamma_cum_element_min(num_elem,num_slip_sys),
+     & gamma_cum_init_even_step(num_elem,num_slip_sys),
+     & tau_max_el(num_elem,num_slip_sys),
+     & fw_hist(num_elem,100),
+     & eta_str_hist(num_elem,100),
+     & d_struct_hist(num_elem,100),
+     & psi_g(num_elem,3),   
+     & Cnor_dis(num_elem*3),
+     & Crand_dis(num_elem*3),
+     & G_max_el(num_elem),
+     & G_2nd_max_el(num_elem),
+     & Accu_Shearstr_pl_eff_max(num_elem),
+     & Sigma_eq_max(num_elem),
+     & fw(num_elem),
+     & eta_str(num_elem),
+     & d_struct(num_elem),
+     & CMeso_rot(num_elem),
+     & n_G_max(num_elem),
+     & n_G_2nd_max(num_elem),
+     & n_Hirth(num_slip_sys,2),
+     & n_CS(num_slip_sys)
+
